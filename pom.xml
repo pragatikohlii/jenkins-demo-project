@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ce235d46-115c-497c-b0e2-474afd80f5e9</groupId>
-	<artifactId>jenkins-demo-project-2</artifactId>
+	<artifactId>jenkins-demo-project</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
@@ -19,36 +19,10 @@
 
 	<build>
 		<plugins>
-			<plugin>
+		<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>3.2.0</version>
-			</plugin>
-			<plugin>
-				  <groupId>org.mule.tools.maven</groupId>
-				  <artifactId>mule-maven-plugin</artifactId>
-				  <version>${mule.maven.plugin.version}</version>
-				  <extensions>true</extensions>
-				  <configuration>
-				    <cloudHubDeployment>
-				      <uri>https://anypoint.mulesoft.com</uri>
-				      <muleVersion>${app.runtime}</muleVersion>
-				      <!-- <username>${username}</username>
-				      <password>${password}</password> -->
-				      <connectedAppClientId>7ffc51af9d99455fbaf63313c892153b</connectedAppClientId>
-      				  <connectedAppClientSecret>D7a11275976847F4a9dB8D13F62f2e60</connectedAppClientSecret>
-      				  <connectedAppGrantType>client_credentials</connectedAppGrantType>
-				      <applicationName>${project.artifactId}</applicationName>
-				      <environment>${environment}</environment>
-				      <region>${region}</region>
-				      <workers>${workers}</workers>
-				      <workerType>${workerType}</workerType>
-				      <properties>
-				        <key>value</key>
-				      </properties>
-				    </cloudHubDeployment>
-				    <classifier>mule-application</classifier>
-				  </configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
@@ -56,8 +30,31 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>${app.runtime}</muleVersion>
+						<!-- <username>${username}</username>
+						<password>${password}</password> -->
+						<connectedAppClientId>7ffc51af9d99455fbaf63313c892153b</connectedAppClientId>
+      <connectedAppClientSecret>D7a11275976847F4a9dB8D13F62f2e60</connectedAppClientSecret>
+      <connectedAppGrantType>client_credentials</connectedAppGrantType>
+						<applicationName>${project.artifactId}</applicationName>
+						<environment>${environment}</environment>
+						<region>${region}</region>
+						<workers>${workers}</workers>
+						<workerType>${workerType}</workerType>
+						<properties>
+							<key>value</key>
+						</properties>
+					</cloudHubDeployment>
 					<classifier>mule-application</classifier>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>${mule.maven.plugin.version}</version>
+				<extensions>true</extensions>
 			</plugin>
 		</plugins>
 	</build>
