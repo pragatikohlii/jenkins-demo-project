@@ -24,7 +24,7 @@ pipeline {
                 echo 'Deploying only because of code commit...'
                 echo " deploying to ${params.env} environment"
                 echo " worker is ${params.workerType}"
-                bat 'mvn package deploy -DmuleDeploy -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -Denvironment=Sandbox -Dworkertype=MICRO -Dworkers=1 -Dregion=us-east-2'
+                bat 'mvn clean deploy -DmuleDeploy -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -Denvironment=Sandbox -Dworkertype=MICRO -Dworkers=1 -Dregion=us-east-2'
             }
         }
     }
